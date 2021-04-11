@@ -72,7 +72,7 @@ userSchema.statics.findByToken = function(token, cb) {
     var user = this;
     
     // 토큰 decode
-    jwt.verify(toke, 'secretToken', function(err, decode) {
+    jwt.verify(token, 'secretToken', function(err, decoded) {
         // 유저 아이디를 이용하여 유저를 찾음
         user.findOne({"_id": decoded, "token": token}, function (err, user) {
             if(err) return cb(err);
