@@ -2,6 +2,7 @@ import Axios from 'axios';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { registerUser } from '../../../_actions/user_action';
+import { withRouter} from 'react-router-dom';
 
 function RegisterPage(props) {
     const dispatch = useDispatch();
@@ -78,4 +79,4 @@ function RegisterPage(props) {
     )
 }
 
-export default RegisterPage;
+export default withRouter(RegisterPage);
